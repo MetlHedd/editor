@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Styles/Buttons/Purple/Normal.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Styles/Buttons/Pink/Hover.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/Styles/Buttons/Pink/Pressed.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/Styles/Buttons/Pink/Normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://Scripts/VisualScript/VariableEdit.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Styles/Buttons/Purple/Pressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://Assets/Styles/Buttons/Purple/Hover.tres" type="StyleBox" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.101961, 0.12549, 0.172549, 1 )
+border_width_left = 2
+border_width_top = 30
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.290196, 0.333333, 0.407843, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 20.0
+
+[node name="VariableEdit" type="WindowDialog"]
+visible = true
+anchor_right = 0.292969
+anchor_bottom = 0.5
+margin_right = -100.0
+margin_bottom = -100.0
+rect_min_size = Vector2( 300, 300 )
+custom_styles/panel = SubResource( 1 )
+custom_colors/title_color = Color( 1, 1, 1, 1 )
+custom_constants/close_v_ofs = 12
+custom_constants/title_height = 5
+window_title = "Title"
+resizable = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Items" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 12.0
+margin_right = -5.0
+margin_bottom = -47.0
+rect_min_size = Vector2( 10, 10 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -30.0
+margin_right = 200.0
+margin_bottom = -5.0
+rect_min_size = Vector2( 0, 25 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CancelButton" type="Button" parent="Buttons"]
+margin_left = 148.0
+margin_right = 198.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 50, 20 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 1 )
+text = "Cancel"
+
+[node name="SaveButton" type="Button" parent="Buttons"]
+margin_left = 202.0
+margin_right = 252.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 50, 20 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 3 )
+custom_styles/normal = ExtResource( 4 )
+text = "Save"

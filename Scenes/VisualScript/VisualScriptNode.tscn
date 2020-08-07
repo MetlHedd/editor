@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/Styles/Fonts/Ubuntu_Bold_16.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Assets/Styles/GraphNode/Red/Frame.tres" type="StyleBox" id=2]
+[ext_resource path="res://Assets/Styles/Fonts/Ubuntu_Bold_Outline_14.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Styles/Buttons/Purple/Pressed.tres" type="StyleBox" id=4]
+[ext_resource path="res://Assets/Styles/Buttons/Purple/Normal.tres" type="StyleBox" id=5]
+[ext_resource path="res://Assets/Styles/Buttons/Purple/Hover.tres" type="StyleBox" id=6]
+[ext_resource path="res://Assets/Styles/Buttons/Pink/Hover.tres" type="StyleBox" id=7]
+[ext_resource path="res://Assets/Styles/Buttons/Pink/Pressed.tres" type="StyleBox" id=8]
+[ext_resource path="res://Assets/Styles/Buttons/Pink/Normal.tres" type="StyleBox" id=9]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color( 0.101961, 0.12549, 0.172549, 1 )
+border_width_left = 2
+border_width_top = 30
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.988235, 0.505882, 0.505882, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="VisualScriptNode" type="GraphNode"]
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
+custom_styles/frame = ExtResource( 2 )
+custom_styles/selectedframe = SubResource( 1 )
+custom_fonts/title_font = ExtResource( 1 )
+custom_colors/close_color = Color( 1, 1, 1, 0.403922 )
+custom_colors/title_color = Color( 1, 1, 1, 1 )
+custom_colors/resizer_color = Color( 1, 1, 1, 1 )
+title = "Title"
+resizable = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="."]
+margin_left = 10.0
+margin_top = 30.0
+margin_right = 140.0
+margin_bottom = 30.0
+
+[node name="Container" type="HBoxContainer" parent="Buttons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -135.0
+margin_top = -25.0
+margin_bottom = -5.0
+rect_min_size = Vector2( 0, 20 )
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpButton" type="Button" parent="Buttons/Container"]
+margin_left = 91.0
+margin_right = 111.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 0 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 3 )
+text = "?"
+
+[node name="CloseButton" type="Button" parent="Buttons/Container"]
+margin_left = 115.0
+margin_right = 135.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 20, 0 )
+focus_mode = 0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+custom_fonts/font = ExtResource( 3 )
+text = "X"

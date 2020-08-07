@@ -1,0 +1,170 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Theme/GodotEditor.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Editor/GameEditor/Tabs/FileExplorer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Editor/EditorUI.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/VisualScript/VisualScriptEditor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/VisualScript/VariableEdit.tscn" type="PackedScene" id=5]
+
+[node name="EditorUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="."]
+anchor_right = 1.0
+rect_min_size = Vector2( 0, 40 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="HBoxContainer" parent="Menu/CenterContainer"]
+margin_left = 312.0
+margin_top = 7.0
+margin_right = 712.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 400, 0 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameButton" type="ToolButton" parent="Menu/CenterContainer/Container"]
+margin_left = 149.0
+margin_right = 197.0
+margin_bottom = 25.0
+toggle_mode = true
+pressed = true
+text = "Game"
+
+[node name="ScriptButton" type="ToolButton" parent="Menu/CenterContainer/Container"]
+margin_left = 201.0
+margin_right = 250.0
+margin_bottom = 25.0
+toggle_mode = true
+text = "Script"
+
+[node name="Left" type="HBoxContainer" parent="Menu"]
+anchor_bottom = 1.0
+rect_min_size = Vector2( 400, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileButton" type="MenuButton" parent="Menu/Left"]
+margin_right = 36.0
+margin_bottom = 40.0
+text = "File"
+switch_on_hover = true
+
+[node name="ProjectButton" type="MenuButton" parent="Menu/Left"]
+margin_left = 40.0
+margin_right = 99.0
+margin_bottom = 40.0
+text = "Project"
+switch_on_hover = true
+
+[node name="AddonsButton" type="MenuButton" parent="Menu/Left"]
+margin_left = 103.0
+margin_right = 162.0
+margin_bottom = 40.0
+text = "Addons"
+switch_on_hover = true
+
+[node name="AboutButton" type="MenuButton" parent="Menu/Left"]
+margin_left = 166.0
+margin_right = 217.0
+margin_bottom = 40.0
+text = "About"
+switch_on_hover = true
+
+[node name="GameEditor" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 40.0
+rect_min_size = Vector2( 0, 60 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tabs" type="TabContainer" parent="GameEditor"]
+anchor_bottom = 1.0
+margin_right = 8.0
+rect_min_size = Vector2( 240, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileExplorer" parent="GameEditor/Tabs" instance=ExtResource( 2 )]
+margin_left = 5.0
+margin_top = 32.0
+margin_right = -5.0
+margin_bottom = -5.0
+
+[node name="Inspector" type="TabContainer" parent="GameEditor"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -240.0
+rect_min_size = Vector2( 240, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameView" type="Control" parent="GameEditor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 240.0
+margin_right = -240.0
+
+[node name="ScriptEditor" type="Control" parent="."]
+visible = false
+anchor_top = 0.0666667
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 60 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Tabs" type="TabContainer" parent="ScriptEditor"]
+anchor_bottom = 1.0
+margin_right = 240.0
+rect_min_size = Vector2( 240, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScriptView" type="Control" parent="ScriptEditor"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 245.0
+margin_top = 5.0
+margin_right = -4.99994
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VisualScriptEditor" parent="ScriptEditor/ScriptView" instance=ExtResource( 4 )]
+
+[node name="VariableEdit" parent="." instance=ExtResource( 5 )]
+visible = false
