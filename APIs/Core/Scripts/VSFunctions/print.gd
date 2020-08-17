@@ -19,10 +19,10 @@ func has_output_sequence() -> bool:
 	return true
 
 func input_parameters() -> Array:
-	return []
+	return ["String"]
 
 func output_parameters() -> Array:
 	return []
 
-func step(_inputs : Array) -> Array:
-	return []
+func generate_code(inputs : Array) -> Array:
+	return [false, "print(\"%s\")" % [inputs[0]]]

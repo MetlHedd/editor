@@ -61,9 +61,12 @@ func _ready() -> void:
 
 	# Add the menu buttons and they items
 	register_menu_button($Menu/Left/FileButton, [], "")
-	register_menu_button($Menu/Left/ProjectButton, [], "")
+	register_menu_button($Menu/Left/SceneButton, [], "")
 	register_menu_button($Menu/Left/AddonsButton, ["Instal new addon", "Manage installed addons"], "")
 	register_menu_button($Menu/Left/AboutButton, [], "")
 
 	#
 	update_editor_view()
+
+	#
+	#$VariableEdit.get_node("Popup").show_new_variable_edit("Test", "res://APIs/Core/Scenes/StringEditScene.tscn")

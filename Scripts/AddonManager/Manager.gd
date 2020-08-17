@@ -6,13 +6,12 @@ var registered_addons : Array = []
 # Visual Script Nodes types
 enum VSTypes {VARIABLE, FUNCTION, GAME_SIGNAL, CUSTOM}
 
-var registered_variables_types : Dictionary = {
-	"Number": {
-		"can_connect_with": [],
-		"color": Color.red
-	},
-	"String": {
-		"can_connect_with": [],
-		"color": Color.red
-	}
-}
+var registered_variables_types : Dictionary = {}
+#	"Number": {
+#		"can_connect_with": [],
+#		"connection_color": Color.red
+#	},
+#	"String": {
+#		"can_connect_with": [],
+#		"connection_color": Color.red
+#	}

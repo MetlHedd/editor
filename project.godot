@@ -27,6 +27,11 @@ AddonManager="*res://Scripts/AddonManager/Manager.gd"
 
 gdscript/warnings/return_value_discarded=false
 
+[display]
+
+window/size/test_width=1920
+window/size/test_height=1080
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

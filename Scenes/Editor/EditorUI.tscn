@@ -75,23 +75,23 @@ margin_bottom = 40.0
 text = "File"
 switch_on_hover = true
 
-[node name="ProjectButton" type="MenuButton" parent="Menu/Left"]
+[node name="SceneButton" type="MenuButton" parent="Menu/Left"]
 margin_left = 40.0
-margin_right = 99.0
+margin_right = 90.0
 margin_bottom = 40.0
-text = "Project"
+text = "Scene"
 switch_on_hover = true
 
 [node name="AddonsButton" type="MenuButton" parent="Menu/Left"]
-margin_left = 103.0
-margin_right = 162.0
+margin_left = 94.0
+margin_right = 153.0
 margin_bottom = 40.0
 text = "Addons"
 switch_on_hover = true
 
 [node name="AboutButton" type="MenuButton" parent="Menu/Left"]
-margin_left = 166.0
-margin_right = 217.0
+margin_left = 157.0
+margin_right = 208.0
 margin_bottom = 40.0
 text = "About"
 switch_on_hover = true
